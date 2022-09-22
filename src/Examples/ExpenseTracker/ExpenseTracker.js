@@ -1,17 +1,30 @@
-import ExpenseItem from './Component/ExpenseItem/ExpenseItem.js';
-import './ExpenseTracker.css';
+import { useState } from "react"
+import Expenses from "./Component/Expenses/Expenses"
+import NewExpense from "./Component/NewExpense/NewExpense"
+
 const ExpenseTracker = (props) => {
-    const items = [
-        { title: "firstItem", amount: "$123", date: new Date() },
-        { title: "secondItem", amount: "$1234", date: new Date() },
-        { title: "thirdItem", amount: "$1235", date: new Date() }
-    ]
-    const renderItems = items.map((i, index) => {
-        return (<ExpenseItem key={index} title={i.title} amount={i.amount} date={i.date}></ExpenseItem>)
-    })
-    return (<div className='expenses'>
-        <h1 style={{textAlign :"center",color : 'blue'}}> Expenses </h1>
-        {renderItems}
-    </div>)
+    const defaultItems = []
+    const [expenseItems, setExpenseItems] = useState(defaultItems);
+    const addExpenseHandler = (expense) => {
+        setExpenseItems((prevState) => { return [...prevState, expense] });
+    }
+    const removeExpenseHandler = (title) => {
+        console.log("removing :", title)
+        setExpenseItems((prevState) => {
+            return arrayRemove(prevState, title)
+        })
+
+    }
+    const arrayRemove = (arr, value) => {
+        return arr.filter(element => element.title !== value);
+    }
+    const renderExpenses = expenseItems.length >= 1 ? (<Expenses items={expenseItems} removeItem={removeExpenseHandler}></Expenses>) : "";
+    return (
+        <div>
+            <h1 style={{textAlign :"center",color : 'blue'}}> Expense Tracker</h1>
+            <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+            {renderExpenses}
+        </div>
+    )
 }
 export default ExpenseTracker;
