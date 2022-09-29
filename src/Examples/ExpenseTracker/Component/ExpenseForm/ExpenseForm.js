@@ -23,11 +23,10 @@ const ExpenseForm = (props) => {
         })
     }
     const onDateChangeHandler = (e) => {
-        setUserInput((prevState) => { return { ...prevState, 'date': new Date(e.target.value) } })
+        setUserInput((prevState) => { return { ...prevState, 'date': e.target.value } })
     }
     const submitHandler = (e) => {
         e.preventDefault();
-        //.log("submit handler", userInput);
         props.onSaveExpense(userInput)
         setUserInput((prevState) => {
             return {
@@ -54,7 +53,7 @@ const ExpenseForm = (props) => {
                 </div>
                 <div className='new-expense__control'>
                     <label>Date</label>
-                    <input type='date' onChange={onDateChangeHandler} min='2018-01-01'></input>
+                    <input type='date' value ={userInput.date} onChange={onDateChangeHandler} min='2018-01-01'></input>
                 </div>
 
             </div>

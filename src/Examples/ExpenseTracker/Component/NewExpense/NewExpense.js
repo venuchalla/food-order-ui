@@ -3,7 +3,7 @@ import './NewExpense.css';
 
 const NewExpense = (props) => {
     const saveExpenseHandler = (userInput) => {
-        const data = { ...userInput, id: Math.random().toString() }
+        const data = { 'title':userInput.title,'amount':userInput.amount,'date':new Date(userInput.date), id: Math.random().toString() }
         props.onAddExpense(data);
     }
     const cancelButtonHandler =(e)=>{
