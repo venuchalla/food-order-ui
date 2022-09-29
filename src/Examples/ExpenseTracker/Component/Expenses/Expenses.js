@@ -15,10 +15,10 @@ const Expenses = (props) => {
         filteredElements = props.items.filter(i => i.date.getFullYear().toString() === year)
     }
 
-    let renderItems = (<div>please add Expenses</div>)
+    let renderItems = (<Card className = 'expenses-list__fallback'>please add Expenses using add expenses button </Card>)
     if (filteredElements && filteredElements.length >= 1) {
         renderItems = filteredElements.map((i, index) => {
-            return (<ExpenseItem key={index} title={i.title} amount={i.amount} date={i.date} onDelete={props.removeItem}></ExpenseItem>)
+            return (<ExpenseItem className = 'expenses-list' key={index} title={i.title} amount={i.amount} date={i.date} onDelete={props.removeItem}></ExpenseItem>)
         })
     }
     return (<div>
