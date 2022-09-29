@@ -27,7 +27,7 @@ const ExpenseTracker = (props) => {
     const renderExpenses = expenseItems.length >= 1 ? (<Expenses items={expenseItems} removeItem={removeExpenseHandler}></Expenses>) : "";
     let renderAddExpense = (<AddButtonExpense onAddNewExpenseButtonClick={setNewExpenseButtonHandlerStatus}></AddButtonExpense>)
     if (addExpenseButtonStatus) {
-        renderAddExpense = (<NewExpense onAddExpense={addExpenseHandler} onCancelButton ={setNewExpenseButtonHandlerStatus}></NewExpense>)
+        renderAddExpense = (<NewExpense onAddExpense={addExpenseHandler} onCancelButton={setNewExpenseButtonHandlerStatus}></NewExpense>)
     }
     return (
         <div>
