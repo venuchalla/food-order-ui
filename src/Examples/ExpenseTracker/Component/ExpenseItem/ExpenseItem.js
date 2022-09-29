@@ -18,9 +18,8 @@ const ExpenseItem = (props) => {
                 <ExpenseDate date={new Date(props.date)}></ExpenseDate>
             </div >
             <div className="expense-item__description">
-                <h2>{title}
-                </h2>
-                <div className="expense-item__price">{props.amount}</div>
+                <h2>{title}</h2>
+                <div className="expense-item__price">${props.amount}</div>
                 <button onClick={onDeleteClickHandler}> Delete Expense</button>
             </div>
 

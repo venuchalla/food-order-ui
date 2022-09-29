@@ -1,12 +1,11 @@
 import Card from "../Card/Card";
 import './ExpenseFilter.css'
 const ExpenseFilter = (props) => {
-    let years = [ '','2018', '2019', '2020', '2021', '2022'];
+    let years = ['', '2018', '2019', '2020', '2021', '2022'];
     const optionComponent = years.map((k, index) => {
         return (<option key={index} value={k}> {k}</option>)
     })
     const onSelectHandler = (e) => {
-        console.log("value:", e.target.value);
         props.onChange(e.target.value);
     }
     return (<Card className='expenses-filter'>
