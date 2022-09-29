@@ -15,7 +15,6 @@ const ExpenseTracker = (props) => {
         setExpenseItems((prevState) => { return [...prevState, expense] });
     }
     const removeExpenseHandler = (title) => {
-        console.log("removing :", title)
         setExpenseItems((prevState) => {
             return arrayRemove(prevState, title)
         })
