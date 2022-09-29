@@ -1,10 +1,16 @@
 import { useState } from "react"
+import AddButtonExpense from "./Component/AddExpense/AddExpenseButton"
+
 import Expenses from "./Component/Expenses/Expenses"
 import NewExpense from "./Component/NewExpense/NewExpense"
 
 const ExpenseTracker = (props) => {
     const defaultItems = []
     const [expenseItems, setExpenseItems] = useState(defaultItems);
+    const [addExpenseButtonStatus, setaddExpenseButtonStatus] = useState(false)
+    const setNewExpenseButtonHandlerStatus = (status) => {
+        setaddExpenseButtonStatus(status)
+    }
     const addExpenseHandler = (expense) => {
         setExpenseItems((prevState) => { return [...prevState, expense] });
     }
@@ -19,10 +25,14 @@ const ExpenseTracker = (props) => {
         return arr.filter(element => element.title !== value);
     }
     const renderExpenses = expenseItems.length >= 1 ? (<Expenses items={expenseItems} removeItem={removeExpenseHandler}></Expenses>) : "";
+    let renderAddExpense = (<AddButtonExpense onAddNewExpenseButtonClick={setNewExpenseButtonHandlerStatus}></AddButtonExpense>)
+    if (addExpenseButtonStatus) {
+        renderAddExpense = (<NewExpense onAddExpense={addExpenseHandler} onCancelButton ={setNewExpenseButtonHandlerStatus}></NewExpense>)
+    }
     return (
         <div>
-            <h1 style={{textAlign :"center",color : 'blue'}}> Expense Tracker</h1>
-            <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+            <h1 style={{ textAlign: "center", color: 'blue' }}> Expense Tracker</h1>
+            {renderAddExpense}
             {renderExpenses}
         </div>
     )

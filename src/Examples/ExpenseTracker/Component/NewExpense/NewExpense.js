@@ -4,11 +4,13 @@ import './NewExpense.css';
 const NewExpense = (props) => {
     const saveExpenseHandler = (userInput) => {
         const data = { ...userInput, id: Math.random().toString() }
-        // console.log(data,"new Expense");
         props.onAddExpense(data);
     }
+    const cancelButtonHandler =(e)=>{
+        props.onCancelButton(false);
+    }
     return (<div className='new-expense'>
-        <ExpenseForm onSaveExpense={saveExpenseHandler} />
+        <ExpenseForm onSaveExpense={saveExpenseHandler} onCancelButton ={cancelButtonHandler}/>
     </div>)
 }
 export default NewExpense;
