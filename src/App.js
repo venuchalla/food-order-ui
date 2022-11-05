@@ -8,6 +8,7 @@ import CartProvider from './Components/Store/CartProvider';
 import UserFinderMain from './Examples/ClassComponentExample/UserFinderMain';
 
 import ExpenseTracker from './Examples/ExpenseTracker/ExpenseTracker';
+import HttpRequestExample from './Examples/HttpRequestsExample/HttpRequestExample';
 import StyleExample from './Examples/StylesExample/StyleExample';
 import UserMain from './Examples/UserApp/UserMain/UserMain';
 
@@ -18,6 +19,7 @@ function App() {
   //<ExpenseTracker></ExpenseTracker>
   //  <StyleExample></StyleExample>
   // <UserMain></UserMain>
+//  <UserFinderMain></UserFinderMain>
   /*let renderElement = []
   for (let i = 0; i <= 100; i++) {
     let localElement = (<h2 key ={i}> number : {i}</h2>)
@@ -38,7 +40,7 @@ function App() {
       <Header onCartButtonClickHandler={showCartModal}></Header>
       <main>
         <Meals></Meals>
-        <UserFinderMain></UserFinderMain>
+        <HttpRequestExample></HttpRequestExample>
       </main>
 
       <Footer></Footer>
