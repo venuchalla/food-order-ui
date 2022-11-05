@@ -5,6 +5,8 @@ import Footer from './Components/Layout/Footer-Component/Footer';
 import Header from './Components/Layout/Header-Component/Header';
 import Meals from './Components/Meals/Meals';
 import CartProvider from './Components/Store/CartProvider';
+import UserFinderMain from './Examples/ClassComponentExample/UserFinderMain';
+
 import ExpenseTracker from './Examples/ExpenseTracker/ExpenseTracker';
 import StyleExample from './Examples/StylesExample/StyleExample';
 import UserMain from './Examples/UserApp/UserMain/UserMain';
@@ -36,7 +38,9 @@ function App() {
       <Header onCartButtonClickHandler={showCartModal}></Header>
       <main>
         <Meals></Meals>
+        <UserFinderMain></UserFinderMain>
       </main>
+
       <Footer></Footer>
     </CartProvider>
   );

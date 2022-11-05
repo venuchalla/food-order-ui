@@ -1,7 +1,11 @@
 import './Card.css';
 
 const Card = (props) => {
-    const classes ="card "+ props.className
+
+    let classes = "card"
+    if (props.className) {
+        classes = classes +" "+ props.className
+    }
     return (<div className={classes}>
         {props.children}
     </div>)

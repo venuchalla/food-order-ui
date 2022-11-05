@@ -1,6 +1,7 @@
 import classes from './Card.module.css';
 const Card = (props) => {
-    return (<div className={classes.card}>
+    const updatedclasses = classes.card +" " + props.className
+    return (<div className={updatedclasses}>
         {props.children}
     </div>)
 }

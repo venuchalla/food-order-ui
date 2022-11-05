@@ -1,0 +1,10 @@
+.usersection {
+    max-width: 60rem;
+    width: 90%;
+    margin: 2rem auto;
+    animation: Available-meals_meals-appear__XEs6t 1s ease-out forwards;
+}
+
+.user{
+    text-align: center;
+}
