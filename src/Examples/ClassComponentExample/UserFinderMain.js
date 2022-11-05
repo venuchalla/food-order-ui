@@ -1,5 +1,6 @@
 import { Component, Fragment } from "react";
 import UserFinder from "./UserFinder";
+import UserNotFound from "./UserNotFound";
 
 
 class UserFinderMain extends Component {
@@ -11,7 +12,10 @@ class UserFinderMain extends Component {
     render() {
 
         return (
-            <UserFinder></UserFinder>
+            <UserNotFound>
+                 <UserFinder></UserFinder>
+            </UserNotFound>
+           
         )
     }
 }

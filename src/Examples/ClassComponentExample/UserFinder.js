@@ -2,6 +2,7 @@ import { Component } from "react";
 import Card from "../../Components/UI/Card/Card";
 import styles from "./Users.module.css";
 import Users from "./Users";
+import UserNotFound from "./UserNotFound";
 const dummyUsers = [{
     name: "venu",
     id: 1
@@ -21,17 +22,28 @@ class UserFinder extends Component {
         
         this.state = {
             searchTerm: "",
-            usersList: dummyUsers
+            usersList: []
         }
+    }
+    componentDidMount(){
+        console.log("componentDidMount is running")
+        this.setState({usersList:dummyUsers})
     }
     componentDidUpdate(prevprops, prevState) {
         if (prevState.searchTerm !== this.state.searchTerm) {
             //console.log("component did update:" ,this.state.searchTerm)
-            this.setState({
-                usersList: dummyUsers.filter((u) => {
-                    return u.name.includes(this.state.searchTerm)
-                })
+            const uList = dummyUsers.filter((u) => {
+                return u.name.includes(this.state.searchTerm)
             })
+            if(uList != null && uList.length >=1){
+                this.setState({
+                    usersList: uList
+                })
+            }else{
+                throw new Error("users not found")
+            }
+
+            
         }
     }
     changeHandler(e) {
@@ -47,7 +59,9 @@ class UserFinder extends Component {
 
                 </Card>
             </section>
+            
             <Users users={this.state.usersList}></Users>
+            
         </>
 
         )

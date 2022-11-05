@@ -9,6 +9,9 @@ class User extends Component {
         
         console.log("constructor called")
     }
+    componentWillUnmount(){
+        console.log("user component will unmount running");
+    }
     render() {
         return (
             <div className={styles.user}>
