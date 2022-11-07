@@ -20,13 +20,12 @@ function HttpRequestExample() {
     });
     const data = await response.json();
     */
-   setMovies((prevState)=>{
-   
-    const updatedState = prevState.concat(movie)
-    console.log("updated state:",updatedState)
-    return updatedState;
-   })
-    console.log(movie);
+    setMovies((prevState) => {
+      const updatedState = prevState.concat(movie)
+      //console.log("updated state:",updatedState)
+      return updatedState;
+    })
+    //console.log(movie);
   }
 
   const fetchMoviesHandler = () => {
@@ -62,7 +61,7 @@ function HttpRequestExample() {
   }
   const fetchMoviesHandlerCallBack = useCallback(fetchMoviesHandler, [])
   useEffect(() => {
-    console.log("useEffect is running");
+  //  console.log("useEffect is running");
     fetchMoviesHandler();
   }, [fetchMoviesHandlerCallBack])
 
