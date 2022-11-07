@@ -1,26 +1,46 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import MoviesList from './MoviesList.js';
 import styles from "./HttpRequestExample.module.css"
 import Loader from './Loader.js';
+import AddMovie from './AddMovie.js';
 
 function HttpRequestExample() {
   const [movies, setMovies] = useState([])
   const [showSpinner, setShowSpinner] = useState(false);
   const [error, setError] = useState("")
+  function addMovieHandler(movie) {
+    /*
+     const response = await fetch('https://react-http-6b4a6.firebaseio.com/movies.json', {
+      method: 'POST',
+      body: JSON.stringify(movie),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await response.json();
+    */
+   setMovies((prevState)=>{
+   
+    const updatedState = prevState.concat(movie)
+    console.log("updated state:",updatedState)
+    return updatedState;
+   })
+    console.log(movie);
+  }
+
   const fetchMoviesHandler = () => {
     setShowSpinner(true);
     setError(false);
     fetch("https://swapi.dev/api/films").then(function (response) {
       if (response.ok) {
-         return response.json() 
+        return response.json()
       } else {
         throw new Error("something went wrong")
       }
     }).then((data) => {
       const movies = data.results.map((movie, index) => {
         return {
-          id: index,
           title: movie.title,
           releaseDate: movie.release_date,
           openingText: movie.opening_crawl
@@ -40,6 +60,12 @@ function HttpRequestExample() {
 
 
   }
+  const fetchMoviesHandlerCallBack = useCallback(fetchMoviesHandler, [])
+  useEffect(() => {
+    console.log("useEffect is running");
+    fetchMoviesHandler();
+  }, [fetchMoviesHandlerCallBack])
+
   let renderMoviesList = "";
   if (movies != null && movies.length >= 1) {
     //console.log("movies:", movies)
@@ -53,9 +79,11 @@ function HttpRequestExample() {
   return (
     <div className={styles.fetchmovies}>
       <section>
+        <AddMovie onAddMovie={addMovieHandler} ></AddMovie>
+      </section>
+      <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
-
       {!showSpinner && renderMoviesList}
       {showSpinner && (<section ><Loader></Loader> </section>)}
       {!showSpinner && err}
