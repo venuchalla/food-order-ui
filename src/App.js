@@ -1,29 +1,25 @@
 
-import { Fragment, useState } from 'react';
-import Cart from './Components/Cart/Cart';
+import React, { Fragment, useState } from 'react';
 import Footer from './Components/Layout/Footer-Component/Footer';
-import Header from './Components/Layout/Header-Component/Header';
-import Meals from './Components/Meals/Meals';
-import CartProvider from './Components/Store/CartProvider';
+import MealsMainApp from './Components/MealsMainApp';
 import UserFinderMain from './Examples/ClassComponentExample/UserFinderMain';
 import CustomhooksMain from './Examples/CustomHooksExample/CustomHooksMain';
 import CustomHooksHttpExampleMain from './Examples/CustomHooksHttpExample/CustomHooksHttpExampleMain';
-
 import ExpenseTracker from './Examples/ExpenseTracker/ExpenseTracker';
 import HttpRequestExample from './Examples/HttpRequestsExample/HttpRequestExample';
 import StyleExample from './Examples/StylesExample/StyleExample';
 import UserMain from './Examples/UserApp/UserMain/UserMain';
-
+import "./App.css"
 
 
 function App() {
-  const [cartShow, setCartShow] = useState(false)
+
   //<ExpenseTracker></ExpenseTracker>
   //  <StyleExample></StyleExample>
   // <UserMain></UserMain>
   //  <UserFinderMain></UserFinderMain>
   //<HttpRequestExample></HttpRequestExample>
-  //<Meals></Meals>
+  //<MealsMainApp></MealsMainApp>
   //<CustomhooksMain></CustomhooksMain>
   //<CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
   /*let renderElement = []
@@ -31,26 +27,12 @@ function App() {
     let localElement = (<h2 key ={i}> number : {i}</h2>)
     renderElement.push(localElement)
   }*/
-  const closeCartModal = () => {
-    setCartShow(false)
-  }
 
-
-  const showCartModal = () => {
-    setCartShow(true)
-  }
-
-  const showCartElement = cartShow ? (<Cart onCloseButton={closeCartModal}></Cart>) : ""
-  return (
-    <CartProvider>
-      {showCartElement}
-      <Header onCartButtonClickHandler={showCartModal}></Header>
-      <main>
-      
-      <CustomhooksMain></CustomhooksMain>
-      </main>
-      <Footer></Footer>
-    </CartProvider>
+  return (<>
+  <MealsMainApp></MealsMainApp>
+  <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
+    <Footer><div><p> we are in foot block</p></div></Footer>
+  </>
   );
 }
 
