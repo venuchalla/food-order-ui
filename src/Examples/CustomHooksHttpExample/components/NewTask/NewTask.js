@@ -1,43 +1,29 @@
-import { useState } from 'react';
+
 
 import Section from '../UI/Section';
 import TaskForm from './TaskForm';
-
+import useHttp from '../../useHttp';
 const NewTask = (props) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
-  const enterTaskHandler = async (taskText) => {
-    setIsLoading(true);
-    setError(null);
-    try {
-      const response = await fetch(
-        'http://localhost:8080/addTask',
-        {
-          method: 'POST',
-          body: JSON.stringify({ "taskName": taskText }),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+  const { isLoading, error, sendRequest: addTask } = useHttp();
+  const enterTaskHandler = (taskText) => {
+    const requestConfig = {
+      url: 'http://localhost:8080/addTask',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: { "taskName": taskText }
+    }
 
-      if (!response.ok) {
-        throw new Error('Request failed!');
-      }
-
-      const data = await response.json();
+    const applyData = (data) => {
       console.log("add response:", data)
       const generatedId = data.id; // firebase-specific => "name" contains generated id
       const createdTask = { id: generatedId, name: data.name };
-
       props.onAddTask(createdTask);
-    } catch (err) {
-      setError(err.message || 'Something went wrong!');
     }
-    setIsLoading(false);
-  };
-
+    addTask(requestConfig, applyData)
+  }
   return (
     <Section>
       <TaskForm onEnterTask={enterTaskHandler} loading={isLoading} />

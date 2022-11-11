@@ -25,6 +25,7 @@ function App() {
   //<HttpRequestExample></HttpRequestExample>
   //<Meals></Meals>
   //<CustomhooksMain></CustomhooksMain>
+  //<CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
   /*let renderElement = []
   for (let i = 0; i <= 100; i++) {
     let localElement = (<h2 key ={i}> number : {i}</h2>)
@@ -46,7 +47,7 @@ function App() {
       <Header onCartButtonClickHandler={showCartModal}></Header>
       <main>
       
-      <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
+      <CustomhooksMain></CustomhooksMain>
       </main>
       <Footer></Footer>
     </CartProvider>

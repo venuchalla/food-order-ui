@@ -1,44 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import Tasks from './components/Tasks/Tasks';
 import NewTask from './components/NewTask/NewTask';
+import useHttp from './useHttp';
 
 function CustomHooksHttpExampleMain() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [tasks, setTasks] = useState([]);
-
-  const fetchTasks = async (taskText) => {
-    setIsLoading(true);
-    setError(null); 
-    try {
-      const response = await fetch(
-        'http://localhost:8080/getAllTasks'
-      );
-
-      if (!response.ok) {
-        
-        throw new Error('Request failed!');
-      }
-
-      const data = await response.json();
-     // console.log("data: ",data)
-      /*const loadedTasks = [];
-
-      for (const taskKey in data) {
-        loadedTasks.push({ id: taskKey, text: data[taskKey].text });
-      }
-*/
-      setTasks(data);
-    } catch (err) {
-      setError(err.message || 'Something went wrong!');
+  
+  /*
+  const requestConfig = useMemo(() => {
+    return {
+      url: 'http://192.168.10.102:8080/getAllTasks'
     }
-    setIsLoading(false);
-  };
+  }, [])
+
+  const transformTask = useCallback((data) => {
+    console.log("http data: ", data)
+    setTasks(data)
+  }, [])*/
+
+  const requestConfig = {
+    url: 'http://192.168.10.102:8080/getAllTasks'
+  }
+  const applyDataFn = (data) => {
+    console.log("http data: ", data)
+    setTasks(data)
+  }
+  const { isLoading, error, sendRequest: fetchTasks } = useHttp()
+
 
   useEffect(() => {
-    fetchTasks();
-  }, []);
+    fetchTasks(requestConfig, applyDataFn);
+  }, [fetchTasks]);
 
   const taskAddHandler = (task) => {
     setTasks((prevTasks) => prevTasks.concat(task));
@@ -57,4 +50,4 @@ function CustomHooksHttpExampleMain() {
   );
 }
 
-export default  CustomHooksHttpExampleMain;
+export default CustomHooksHttpExampleMain;

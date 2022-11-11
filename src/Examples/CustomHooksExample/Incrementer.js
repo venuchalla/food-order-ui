@@ -1,13 +1,14 @@
 
+import { useCallback } from "react";
 import Card from "../../Components/UI/Card/Card";
 import styles from "./CustomHooks.module.css";
 import useCounter from "./useCounter";
 const Incrementer = (props) => {
 
-    const countFunc = (counter) => {
+    const countIncrementer = useCallback((counter) => {
         return counter + 1;
-    }
-    const counter = useCounter({setCount:countFunc})
+    },[])
+    const counter = useCounter(countIncrementer)
 
     return (<Card className={styles.customHooks} >
         <p> Increment Counter : {counter}</p>
