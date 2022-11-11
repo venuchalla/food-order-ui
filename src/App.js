@@ -7,6 +7,7 @@ import Meals from './Components/Meals/Meals';
 import CartProvider from './Components/Store/CartProvider';
 import UserFinderMain from './Examples/ClassComponentExample/UserFinderMain';
 import CustomhooksMain from './Examples/CustomHooksExample/CustomHooksMain';
+import CustomHooksHttpExampleMain from './Examples/CustomHooksHttpExample/CustomHooksHttpExampleMain';
 
 import ExpenseTracker from './Examples/ExpenseTracker/ExpenseTracker';
 import HttpRequestExample from './Examples/HttpRequestsExample/HttpRequestExample';
@@ -22,6 +23,8 @@ function App() {
   // <UserMain></UserMain>
   //  <UserFinderMain></UserFinderMain>
   //<HttpRequestExample></HttpRequestExample>
+  //<Meals></Meals>
+  //<CustomhooksMain></CustomhooksMain>
   /*let renderElement = []
   for (let i = 0; i <= 100; i++) {
     let localElement = (<h2 key ={i}> number : {i}</h2>)
@@ -42,8 +45,8 @@ function App() {
       {showCartElement}
       <Header onCartButtonClickHandler={showCartModal}></Header>
       <main>
-        <Meals></Meals>
-        <CustomhooksMain></CustomhooksMain>
+      
+      <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
       </main>
       <Footer></Footer>
     </CartProvider>
