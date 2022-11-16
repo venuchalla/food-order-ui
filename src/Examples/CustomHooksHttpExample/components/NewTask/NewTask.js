@@ -22,6 +22,7 @@ const NewTask = (props) => {
       const createdTask = { id: generatedId, name: data.name };
       props.onAddTask(createdTask);
     }
+    //applyData.bind
     addTask(requestConfig, applyData)
   }
   return (

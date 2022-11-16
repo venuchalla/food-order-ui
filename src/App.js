@@ -29,8 +29,8 @@ function App() {
   }*/
 
   return (<>
-  <MealsMainApp></MealsMainApp>
-  <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
+    <MealsMainApp></MealsMainApp>
+    <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
     <Footer><div><p> we are in foot block</p></div></Footer>
   </>
   );
