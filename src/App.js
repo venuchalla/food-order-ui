@@ -24,17 +24,17 @@ function App() {
   //<MealsMainApp></MealsMainApp>
   //<CustomhooksMain></CustomhooksMain>
   //<CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
-  let renderElement = []
+ /* let renderElement = []
   for (let i = 0; i <= 100; i++) {
     let localElement = (<h2 key={i}> number : {i}</h2>)
     renderElement.push(localElement)
   }
-
+*/
 
   return (<>
     <AppHeader></AppHeader>
-    <section style={{marginTop : "5rem"}}>
-      <MealsMainApp></MealsMainApp>
+    <section style={{marginTop : "6rem"}}>
+     <FormExampleMain></FormExampleMain>
     </section>
     <Footer><div><p> we are in foot block</p></div></Footer>
   </>
