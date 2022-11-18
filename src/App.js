@@ -10,6 +10,8 @@ import HttpRequestExample from './Examples/HttpRequestsExample/HttpRequestExampl
 import StyleExample from './Examples/StylesExample/StyleExample';
 import UserMain from './Examples/UserApp/UserMain/UserMain';
 import "./App.css"
+import FormExampleMain from './Examples/FormExample/FormExampleMain';
+import AppHeader from './Components/Layout/App-Header/AppHeader';
 
 
 function App() {
@@ -22,15 +24,18 @@ function App() {
   //<MealsMainApp></MealsMainApp>
   //<CustomhooksMain></CustomhooksMain>
   //<CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
-  /*let renderElement = []
+  let renderElement = []
   for (let i = 0; i <= 100; i++) {
-    let localElement = (<h2 key ={i}> number : {i}</h2>)
+    let localElement = (<h2 key={i}> number : {i}</h2>)
     renderElement.push(localElement)
-  }*/
+  }
+
 
   return (<>
-    <MealsMainApp></MealsMainApp>
-    <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
+    <AppHeader></AppHeader>
+    <section style={{marginTop : "5rem"}}>
+      <MealsMainApp></MealsMainApp>
+    </section>
     <Footer><div><p> we are in foot block</p></div></Footer>
   </>
   );
