@@ -34,14 +34,6 @@ function App() {
   return (<>
     <AppHeader></AppHeader>
     <section style={{ marginTop: "6rem" }}>
-      <FormExampleMain></FormExampleMain>
-      <ExpenseTracker></ExpenseTracker>
-      <StyleExample></StyleExample>
-      <UserMain></UserMain>
-      <UserFinderMain></UserFinderMain>
-      <HttpRequestExample></HttpRequestExample>
-      <CustomhooksMain></CustomhooksMain>
-      <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
       <MealsMainApp></MealsMainApp>
     </section>
     <Footer><div><p> we are in foot block</p></div></Footer>
