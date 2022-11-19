@@ -40,9 +40,9 @@ function App() {
       <UserMain></UserMain>
       <UserFinderMain></UserFinderMain>
       <HttpRequestExample></HttpRequestExample>
-      <MealsMainApp></MealsMainApp>
       <CustomhooksMain></CustomhooksMain>
       <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
+      <MealsMainApp></MealsMainApp>
     </section>
     <Footer><div><p> we are in foot block</p></div></Footer>
   </>
