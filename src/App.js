@@ -1,5 +1,5 @@
 
-import React, { Fragment, useState } from 'react';
+import React from 'react';
 import Footer from './Components/Layout/Footer-Component/Footer';
 import MealsMainApp from './Components/MealsMainApp';
 import UserFinderMain from './Examples/ClassComponentExample/UserFinderMain';
@@ -24,17 +24,25 @@ function App() {
   //<MealsMainApp></MealsMainApp>
   //<CustomhooksMain></CustomhooksMain>
   //<CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
- /* let renderElement = []
-  for (let i = 0; i <= 100; i++) {
-    let localElement = (<h2 key={i}> number : {i}</h2>)
-    renderElement.push(localElement)
-  }
-*/
+  /* let renderElement = []
+   for (let i = 0; i <= 100; i++) {
+     let localElement = (<h2 key={i}> number : {i}</h2>)
+     renderElement.push(localElement)
+   }
+ */
 
   return (<>
     <AppHeader></AppHeader>
-    <section style={{marginTop : "6rem"}}>
-     <FormExampleMain></FormExampleMain>
+    <section style={{ marginTop: "6rem" }}>
+      <FormExampleMain></FormExampleMain>
+      <ExpenseTracker></ExpenseTracker>
+      <StyleExample></StyleExample>
+      <UserMain></UserMain>
+      <UserFinderMain></UserFinderMain>
+      <HttpRequestExample></HttpRequestExample>
+      <MealsMainApp></MealsMainApp>
+      <CustomhooksMain></CustomhooksMain>
+      <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
     </section>
     <Footer><div><p> we are in foot block</p></div></Footer>
   </>
