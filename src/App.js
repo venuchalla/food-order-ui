@@ -33,7 +33,7 @@ function App() {
 
   return (<>
     <AppHeader></AppHeader>
-    <section style={{ marginTop: "6rem" }}>
+    <section style={{ marginTop: "5rem" }}>
       <MealsMainApp></MealsMainApp>
     </section>
     <Footer><div><p> we are in foot block</p></div></Footer>
