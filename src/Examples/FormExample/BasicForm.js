@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import useInput from "./hooks/UseInput";
 
 const BasicForm = (props) => {
@@ -33,16 +34,29 @@ const BasicForm = (props) => {
     inputBlurHandler: emailBlurHandler,
     reset: emailresetHandler,
   } = useInput(emailValidateFn);
-
+  const fnameRef = useRef();
+  const lnameRef = useRef();
+  const emailRef = useRef();
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log("submitButton handler")
-    setTimeout(() => {
+    emailBlurHandler();
+    fNameBlurHandler();
+    lNameBlurHandler();
+    if (!formValid) {
+      if (!fNameValid) {
+        fnameRef.current.focus();
+      } else if (!lNameValid) {
+        lnameRef.current.focus();
+      } else if (!emailValid) {
+        emailRef.current.focus();
+      }
+    }else {
       emailresetHandler();
       lNameresetHandler();
       fNameresetHandler();
-    }, 1000);
+    }
   };
+
   const formValid = fNameValid && lNameValid && emailValid;
   const fnameclasses = fNamehasError ? "form-control invalid" : "form-control";
   const lnameClasses = lNamehasError ? "form-control invalid" : "form-control";
@@ -53,6 +67,7 @@ const BasicForm = (props) => {
         <div className={fnameclasses}>
           <label htmlFor="fname">First Name</label>
           <input
+            ref={fnameRef}
             type="text"
             id="fname"
             value={fName}
@@ -66,6 +81,7 @@ const BasicForm = (props) => {
         <div className={lnameClasses}>
           <label htmlFor="lname">Last Name</label>
           <input
+            ref={lnameRef}
             type="text"
             id="lname"
             value={lName}
@@ -80,6 +96,7 @@ const BasicForm = (props) => {
       <div className={emailClasses}>
         <label htmlFor="email">E-Mail Address</label>
         <input
+          ref={emailRef}
           type="text"
           id="email"
           value={email}
@@ -91,9 +108,7 @@ const BasicForm = (props) => {
         ) : null}
       </div>
       <div className="form-actions">
-        <button onClick={submitHandler} disabled={!formValid}>
-          Submit
-        </button>
+        <button onClick={submitHandler}>Submit</button>
       </div>
     </form>
   );
