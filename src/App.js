@@ -33,14 +33,7 @@ function App() {
     <>
       <AppHeader></AppHeader>
       <section style={{ marginTop: "5rem" }}>
-        <MealsMainApp></MealsMainApp>
-        <ExpenseTracker></ExpenseTracker>
-        <StyleExample></StyleExample>
-        <UserMain></UserMain>
-        <UserFinderMain></UserFinderMain>
-        <HttpRequestExample></HttpRequestExample>
-        <CustomhooksMain></CustomhooksMain>
-        <CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
+        
         <FormExampleMain></FormExampleMain>
       </section>
       <Footer>
