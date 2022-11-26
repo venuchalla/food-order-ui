@@ -11,9 +11,10 @@ import UserMain from "./Examples/UserApp/UserMain/UserMain";
 import "./App.css";
 import FormExampleMain from "./Examples/FormExample/FormExampleMain";
 import AppHeader from "./Components/Layout/App-Header/AppHeader";
+import ReduxMain from "./Examples/ReduxExample/ReduxMain";
 
 function App() {
-
+  // <ExpenseTracker></ExpenseTracker>
   //<ExpenseTracker></ExpenseTracker>
   //  <StyleExample></StyleExample>
   // <UserMain></UserMain>
@@ -33,8 +34,7 @@ function App() {
     <>
       <AppHeader></AppHeader>
       <section style={{ marginTop: "5rem" }}>
-        
-        <FormExampleMain></FormExampleMain>
+        <ReduxMain></ReduxMain>
       </section>
       <Footer>
         <div>
