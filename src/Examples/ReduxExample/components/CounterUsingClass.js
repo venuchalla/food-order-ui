@@ -25,8 +25,8 @@ class CounterUsingClass extends Component {
 const mapStateToProps = (state) => {
   //console.log("state in class component:",state.counterReducer.counter)
   return {
-    counter: state.counterReducer.counter,
-    showCounter: state.counterReducer.showCounter,
+    counter: state.counter.counter,
+    showCounter: state.counter.showCounter,
   };
 };
 const mapDispacthToProps = (dispatch) => {

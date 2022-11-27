@@ -33,7 +33,7 @@ const CounterStore = legacy_createStore(counterReducer);
 */
 
 //Redux using react tool kit
-const initialState = { counter: 0, showCounter : false }
+const initialState = { counter: 0, showCounter: false };
 const counterSlice = createSlice({
   name: "counter",
   initialState: initialState,
@@ -64,10 +64,26 @@ const counterSlice = createSlice({
     },
   },
 });
-const CounterStore = configureStore({
-  reducer:{
-    counterReducer : counterSlice.reducer
+const initialAuthState = { isAuthenticated: false };
+const authSlice = createSlice({
+  name: "auth",
+  initialState: initialAuthState,
+  reducers: {
+    login(state, action) {
+      console.log("login:",action.payload)
+      state.isAuthenticated = true;
+    },
+    logout(state) {
+      state.isAuthenticated = false;
+    },
   },
-})
+});
+const CounterStore = configureStore({
+  reducer: {
+    counter: counterSlice.reducer,
+    auth :authSlice.reducer
+  },
+});
+export const authActions = authSlice.actions;
 export const counterActions = counterSlice.actions;
 export default CounterStore;
