@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   
 }
 
@@ -86,16 +87,18 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-
 button:hover,
 button:active {
   background-color: #33059e;
   border-color: #33059e;
 }
+
 button:disabled{
   background-color: grey;
   border-color: grey;
+  pointer-events: none;
 }
+
 .form-actions {
   text-align: right;
 }

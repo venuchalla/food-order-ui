@@ -33,7 +33,7 @@ function App() {
   return (
     <>
       <AppHeader></AppHeader>
-      <section style={{ marginTop: "5rem" }}>
+      <section style={{ marginTop: "6rem" }}>
         <ReduxMain></ReduxMain>
       </section>
       <Footer>
