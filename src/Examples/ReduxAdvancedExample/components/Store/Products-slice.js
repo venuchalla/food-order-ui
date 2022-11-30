@@ -4,7 +4,7 @@ const intialProducts = [
   { title: "Test Item",  price: 6 },
   { title: "Test Item2", price: 5 },
 ];
-//quantity: 34, total: 1, 
+ 
 const ProductsSlice = createSlice({
   name: "Items",
   initialState: intialProducts,
