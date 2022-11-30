@@ -12,6 +12,7 @@ import "./App.css";
 import FormExampleMain from "./Examples/FormExample/FormExampleMain";
 import AppHeader from "./Components/Layout/App-Header/AppHeader";
 import ReduxMain from "./Examples/ReduxExample/ReduxMain";
+import ReduxAdvancedExample from "./Examples/ReduxAdvancedExample/ReduxAdvancedExample";
 
 function App() {
   // <ExpenseTracker></ExpenseTracker>
@@ -23,6 +24,7 @@ function App() {
   //<MealsMainApp></MealsMainApp>
   //<CustomhooksMain></CustomhooksMain>
   //<CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>
+  //<ReduxMain></ReduxMain>
   /* let renderElement = []
    for (let i = 0; i <= 100; i++) {
      let localElement = (<h2 key={i}> number : {i}</h2>)
@@ -34,7 +36,7 @@ function App() {
     <>
       <AppHeader></AppHeader>
       <section style={{ marginTop: "6rem" }}>
-        <ReduxMain></ReduxMain>
+        <ReduxAdvancedExample></ReduxAdvancedExample>
       </section>
       <Footer>
         <div>
