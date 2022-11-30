@@ -3,17 +3,17 @@ import { useDispatch } from "react-redux";
 import { CartActions } from "../Store/Cart-Slice";
 
 const CartItem = (props) => {
-  const { title, quantity, total, price } = props.item;
+  const { id , title , quantity, total, price } = props.item;
   const dispatch = useDispatch();
 
   const decrementHanlder = () => {
     dispatch(
-      CartActions.decrementQuantityHandler({ title: title, price: price })
+      CartActions.decrementQuantityHandler({ id: id,title: title, price: price })
     );
   };
 const incrementHandler = () =>{
   dispatch(
-    CartActions.addItemsToCartHandler({ title: title, price: price })
+    CartActions.addItemsToCartHandler({ id: id,title: title, price: price })
   );
 }
   return (

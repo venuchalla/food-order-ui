@@ -13,9 +13,10 @@ const Products = (props) => {
         return (
           <ul key={index}>
             <ProductItem
+              id ={product.id}
               title={product.title}
               price={product.price}
-              description="This product - amazing!"
+              description={product.description}
             />
           </ul>
         );

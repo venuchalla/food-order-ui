@@ -10,11 +10,11 @@ const CartSlice = createSlice({
   initialState: cartIntialState,
   reducers: {
     addItemsToCartHandler(state, action) {
-      const { title, price } = action.payload;
+      const { id,title, price } = action.payload;
       console.log("title:", title);
       let items = state.items;
       const index = items.findIndex((i) => {
-        return i.title === title;
+        return i.id === id;
       });
       if (index >= 0) {
         let item = items[index];
@@ -26,21 +26,21 @@ const CartSlice = createSlice({
         let totalQuantity = state.totalQuantity;
         state.totalQuantity = totalQuantity + 1;
       } else {
-        items.push({ title: title, price: price, quantity: 1, total: price });
+        items.push({ id : id, title: title, price: price, quantity: 1, total: price });
         let totalQuantity = state.totalQuantity;
         state.totalQuantity = totalQuantity + 1;
       }
     },
     toggleCartHandler(state, action) {
-      let showCart = !state.showCart;
-      state.showCart = showCart;
+      //let showCart = !state.showCart;
+      state.showCart = !state.showCart;
     },
     decrementQuantityHandler(state, action) {
-      const { title, price } = action.payload;
+      const { id,title, price } = action.payload;
 
       let items = state.items;
       const index = items.findIndex((i) => {
-        return i.title === title;
+        return i.id === id;
       });
       console.log("index:", index);
       if (index >= 0) {
