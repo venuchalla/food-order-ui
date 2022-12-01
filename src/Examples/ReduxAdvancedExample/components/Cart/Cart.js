@@ -1,18 +1,16 @@
-import { useSelector } from "react-redux";
+
+import {  useSelector } from "react-redux";
 import Card from "../UI/Card";
 import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
-  const { showCart } = useSelector((state) => {
-    return state.ui;
-  });
+  
   const { items } = useSelector((state) => {
     return state.cart;
   });
+  
   return (
-    <div>
-      {showCart && (
         <Card className={classes.cart}>
           <h2>Your Shopping Cart</h2>
           {items.map((item, index) => {
@@ -31,9 +29,8 @@ const Cart = (props) => {
             );
           })}
         </Card>
-      )}
-    </div>
-  );
+      );
+  
 };
 
 export default Cart;
