@@ -1,6 +1,6 @@
 const NewQuote = (props)=>{
     return(<div>
-        <p> New Quote </p>
+        <h1> New Quote </h1>
     </div>)
 }
 export default NewQuote;

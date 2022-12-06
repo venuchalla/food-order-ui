@@ -3,7 +3,7 @@
 
 const AllQuotes =(props)=>{
     return(<div>
-        <p>All Quotes</p>
+        <h1>All Quotes</h1>
     </div>)
 }
 export default AllQuotes;

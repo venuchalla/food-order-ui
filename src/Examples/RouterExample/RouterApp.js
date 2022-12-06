@@ -1,5 +1,8 @@
 import { NavLink, Outlet } from "react-router-dom";
-
+import { Routes, Route, Navigate } from "react-router";
+import NewQuote from "./Pages/NewQuote";
+import QuoteDetail from "./Pages/QuoteDetail";
+import AllQuotes from "./Pages/AllQuotes";
 
 function RouterApp() {
   /**
@@ -19,7 +22,6 @@ function RouterApp() {
           <NavLink to="/Examples/RouterApp/AllQuotes"> All Quotes</NavLink>
         </li>
       </ul>
-      <Outlet></Outlet>
     </div>
   );
 }

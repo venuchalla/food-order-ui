@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import Examples from "./Examples/Examples";
 import Home from "./Home";
 import ExpenseTracker from "./Examples/ExpenseTracker/ExpenseTracker";
@@ -19,7 +19,13 @@ import RouterApp from "./Examples/RouterExample/RouterApp";
 const AppRoutes = (props) => {
   return (
     <Routes>
-      <Route path="/" element={<Home></Home>}></Route>
+      <Route
+        path="/"
+        exact
+        element={<Navigate to={"/home"} replace={true}></Navigate>}
+      ></Route>
+      <Route path="/home" element={<Home></Home>}></Route>
+      <Route path="/Examples" element={<Examples></Examples>}></Route>
       <Route
         exact
         path="/Examples/ReduxAdvancedExample"
@@ -69,24 +75,24 @@ const AppRoutes = (props) => {
         path="/Examples/UserMain"
         element={<UserMain></UserMain>}
       ></Route>
-      <Route path="/Examples" element={<Examples></Examples>}></Route>
-      <Route exact path="/Examples/RouterApp" element={<RouterApp></RouterApp>}>
-        <Route
-          exact
-          path="/Examples/RouterApp/NewQuote"
-          element={<NewQuote></NewQuote>}
-        ></Route>
-        <Route
-          exact
-          path="/Examples/RouterApp/AllQuotes"
-          element={<AllQuotes></AllQuotes>}
-        ></Route>
-        <Route
-          exact
-          path="/Examples/RouterApp/QuoteDetail"
-          element={<QuoteDetail></QuoteDetail>}
-        ></Route>
-      </Route>
+
+      <Route
+        exact
+        path="/Examples/RouterApp/"
+        element={<RouterApp></RouterApp>}
+      ></Route>
+      <Route
+        path="/Examples/RouterApp/NewQuote"
+        element={<NewQuote></NewQuote>}
+      ></Route>
+      <Route
+        path="/Examples/RouterApp/QuoteDetail/:id"
+        element={<QuoteDetail></QuoteDetail>}
+      ></Route>
+      <Route
+        path="/Examples/RouterApp/AllQuotes"
+        element={<AllQuotes></AllQuotes>}
+      ></Route>
       <Route
         exact
         path="/CourseApp"

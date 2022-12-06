@@ -31,7 +31,7 @@ const Examples = (props) => {
           <NavLink to="/Examples/HttpRequestExample">Http Request Example</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/RouterApp/">Router Example</NavLink>
+          <NavLink to="/Examples/RouterApp">Router Example</NavLink>
         </li>
         <li>
           <NavLink to="/Examples/StyleExample">Styles Example</NavLink>
@@ -40,7 +40,6 @@ const Examples = (props) => {
           <NavLink to="/Examples/UserMain"> User App</NavLink>
         </li>
       </ul>
-      <Outlet></Outlet>
     </Card>
   );
 };
