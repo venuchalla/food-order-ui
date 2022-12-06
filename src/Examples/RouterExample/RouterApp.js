@@ -1,28 +1,31 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { Routes, Route, Navigate } from "react-router";
+import { Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router";
 import NewQuote from "./Pages/NewQuote";
 import QuoteDetail from "./Pages/QuoteDetail";
 import AllQuotes from "./Pages/AllQuotes";
+import LayOut from "./Components/layout/layout";
 
 function RouterApp() {
   /**
    *
    */
   return (
-    <div>
-      <h1> Router Example</h1>
-      <ul>
-        <li>
-          <NavLink to="/Examples/RouterApp/NewQuote"> Add New Quote</NavLink>
-        </li>
-        <li>
-          <NavLink to="/Examples/RouterApp/QuoteDetail"> QuoteDetail</NavLink>
-        </li>
-        <li>
-          <NavLink to="/Examples/RouterApp/AllQuotes"> All Quotes</NavLink>
-        </li>
-      </ul>
-    </div>
+    <LayOut>
+      <Routes>
+        <Route
+          exact path="/NewQuote"
+          element={<NewQuote></NewQuote>}
+        ></Route>
+        <Route
+          exact path="/QuoteDetail/:id"
+          element={<QuoteDetail></QuoteDetail>}
+        ></Route>
+        <Route
+          exact path="/AllQuotes"
+          element={<AllQuotes></AllQuotes>}
+        ></Route>
+        </Routes>
+    </LayOut>
   );
 }
 

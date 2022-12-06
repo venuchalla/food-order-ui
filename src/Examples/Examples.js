@@ -1,8 +1,11 @@
+import { Fragment } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import Card from "../Components/UI/Card/Card";
+import ExampleRoutes from "./ExampleRoutes";
 
 const Examples = (props) => {
   return (
+    <Fragment>
     <Card>
       <h1>React Examples</h1>
       <ul>
@@ -41,6 +44,8 @@ const Examples = (props) => {
         </li>
       </ul>
     </Card>
+    <ExampleRoutes></ExampleRoutes>
+    </Fragment>
   );
 };
 export default Examples;

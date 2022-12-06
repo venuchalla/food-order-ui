@@ -3,6 +3,7 @@ import Footer from "./Components/Layout/Footer-Component/Footer";
 import "./App.css";
 import AppHeader from "./Components/Layout/App-Header/AppHeader";
 import AppRoutes from "./AppRoutes";
+import RouterApp from "./Examples/RouterExample/RouterApp";
 
 function App() {
   /* let renderElement = []
@@ -16,7 +17,7 @@ function App() {
     <>
       <AppHeader></AppHeader>
       <section style={{ marginTop: "6rem" }}>
-        <AppRoutes></AppRoutes>
+       <AppRoutes></AppRoutes>
       </section>
       <Footer>
         <div>

@@ -25,74 +25,7 @@ const AppRoutes = (props) => {
         element={<Navigate to={"/home"} replace={true}></Navigate>}
       ></Route>
       <Route path="/home" element={<Home></Home>}></Route>
-      <Route path="/Examples" element={<Examples></Examples>}></Route>
-      <Route
-        exact
-        path="/Examples/ReduxAdvancedExample"
-        element={<ReduxAdvancedExample></ReduxAdvancedExample>}
-      ></Route>
-      <Route
-        exact
-        path="/Examples/UserFinder"
-        element={<UserFinder></UserFinder>}
-      ></Route>
-      <Route
-        exact
-        path="/Examples/CustomHooksExample"
-        element={<CustomhooksMain></CustomhooksMain>}
-      ></Route>
-      <Route
-        exact
-        path="/Examples/CustomHooksHttpExampleMain"
-        element={<CustomHooksHttpExampleMain></CustomHooksHttpExampleMain>}
-      ></Route>
-      <Route
-        exact
-        path="/Examples/ExpenseTracker"
-        element={<ExpenseTracker />}
-      ></Route>
-      <Route
-        path="/Examples/FormExample"
-        element={<FormExampleMain></FormExampleMain>}
-      ></Route>
-      <Route
-        exact
-        path="/Examples/ReduxExample"
-        element={<ReduxMain></ReduxMain>}
-      ></Route>
-      <Route
-        exact
-        path="/Examples/HttpRequestExample"
-        element={<HttpRequestExample></HttpRequestExample>}
-      ></Route>
-      <Route
-        exact
-        path="/Examples/StyleExample"
-        element={<StyleExample></StyleExample>}
-      ></Route>
-      <Route
-        exact
-        path="/Examples/UserMain"
-        element={<UserMain></UserMain>}
-      ></Route>
-
-      <Route
-        exact
-        path="/Examples/RouterApp/"
-        element={<RouterApp></RouterApp>}
-      ></Route>
-      <Route
-        path="/Examples/RouterApp/NewQuote"
-        element={<NewQuote></NewQuote>}
-      ></Route>
-      <Route
-        path="/Examples/RouterApp/QuoteDetail/:id"
-        element={<QuoteDetail></QuoteDetail>}
-      ></Route>
-      <Route
-        path="/Examples/RouterApp/AllQuotes"
-        element={<AllQuotes></AllQuotes>}
-      ></Route>
+      <Route path="/Examples/*" element={<Examples></Examples>}></Route>
       <Route
         exact
         path="/CourseApp"
