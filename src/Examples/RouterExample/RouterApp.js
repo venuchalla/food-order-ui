@@ -5,6 +5,7 @@ import AllQuotes from "./Pages/AllQuotes";
 import LayOut from "./Components/layout/layout";
 import { Navigate } from "react-router";
 import NotFound from "./Pages/NotFound";
+import { Link } from "react-router-dom";
 import Comments from "./Components/comments/Comments";
 function RouterApp() {
   /**
@@ -25,14 +26,25 @@ function RouterApp() {
         ></Route>
         <Route exact path="/NewQuote" element={<NewQuote></NewQuote>}></Route>
         <Route
-          exact
           path="/QuoteDetail/:quoteId"
           element={<QuoteDetail></QuoteDetail>}
         >
           <Route
-          path={"/QuoteDetail/:quoteId/comments"}
-          element={<Comments></Comments>}
-        ></Route>
+            exact
+            path="/QuoteDetail/:quoteId"
+            element={
+              <div className="centered">
+              <Link className="btn--flat" to='/Examples/RouterApp/QuoteDetail/:quoteId/comments'>
+                {" "}
+                Load Comments route
+              </Link>
+              </div>
+            }
+          ></Route>
+          <Route
+            path={"/QuoteDetail/:quoteId/comments"}
+            element={<Comments></Comments>}
+          ></Route>
         </Route>
         <Route
           exact
