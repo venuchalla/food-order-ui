@@ -5,6 +5,7 @@ import AllQuotes from "./Pages/AllQuotes";
 import LayOut from "./Components/layout/layout";
 import { Navigate } from "react-router";
 import NotFound from "./Pages/NotFound";
+import Comments from "./Components/comments/Comments";
 function RouterApp() {
   /**
    *
@@ -27,14 +28,18 @@ function RouterApp() {
           exact
           path="/QuoteDetail/:quoteId"
           element={<QuoteDetail></QuoteDetail>}
+        >
+          <Route
+          path={"/QuoteDetail/:quoteId/comments"}
+          element={<Comments></Comments>}
         ></Route>
+        </Route>
         <Route
           exact
           path="/AllQuotes"
           element={<AllQuotes></AllQuotes>}
         ></Route>
-          <Route path='*' element={<NotFound></NotFound>}>
-        </Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </LayOut>
   );
