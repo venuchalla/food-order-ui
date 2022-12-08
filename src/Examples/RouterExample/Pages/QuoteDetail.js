@@ -1,8 +1,9 @@
-import { useParams} from "react-router";
-import {useHistory} from 'react-router-dom'
+import { Outlet, useParams } from "react-router";
 import HighlightedQuote from "../Components/quotes/HighlightedQuote";
 import Comments from "../Components/comments/Comments";
-import { Route } from "react-router";
+import { Route ,Routes} from "react-router";
+import { Link } from "react-router-dom";
+
 const QuoteDetail = (props) => {
   const params = useParams();
   const dummyQuotes = [
@@ -14,9 +15,7 @@ const QuoteDetail = (props) => {
     return <p>No Quote found</p>;
   }
   /**
-   * <Route path = {`/Quotes/${params.quoteId}/comments`}>
-        <Comments></Comments>
-      </Route>
+   *
    */
   return (
     <>
@@ -24,6 +23,18 @@ const QuoteDetail = (props) => {
         text={Quote.text}
         author={Quote.author}
       ></HighlightedQuote>
+      <div className="centered">
+        <Link
+          className="btn--flat"
+          to={`/Examples/RouterApp/QuoteDetail/${params.quoteId}/comments`}
+        >
+          {" "}
+          Load Comments
+        </Link>
+      </div>
+   
+        <Outlet></Outlet>
+    
     </>
   );
 };
