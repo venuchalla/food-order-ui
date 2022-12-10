@@ -21,13 +21,11 @@ const AppRoutes = (props) => {
     <Routes>
       <Route
         path="/"
-        exact
         element={<Navigate to={"/home"} replace={true}></Navigate>}
       ></Route>
       <Route path="/home" element={<Home></Home>}></Route>
       <Route path="/Examples/*" element={<Examples></Examples>}></Route>
       <Route
-        exact
         path="/CourseApp"
         element={<MealsMainApp></MealsMainApp>}
       ></Route>

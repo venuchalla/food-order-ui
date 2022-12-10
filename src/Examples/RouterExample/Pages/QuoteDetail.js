@@ -33,7 +33,7 @@ const QuoteDetail = (props) => {
         </Link>
       </div>
    
-        <Outlet></Outlet>
+      <Outlet></Outlet>
     
     </>
   );
