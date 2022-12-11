@@ -1,7 +1,7 @@
 import { Outlet, useParams } from "react-router";
 import HighlightedQuote from "../Components/quotes/HighlightedQuote";
 import Comments from "../Components/comments/Comments";
-import { Route ,Routes} from "react-router";
+import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
 
 const QuoteDetail = (props) => {
@@ -23,18 +23,28 @@ const QuoteDetail = (props) => {
         text={Quote.text}
         author={Quote.author}
       ></HighlightedQuote>
-      <div className="centered">
-        <Link
-          className="btn--flat"
-          to={`/Examples/RouterApp/QuoteDetail/${params.quoteId}/comments`}
-        >
-          {" "}
-          Load Comments
-        </Link>
-      </div>
-   
+      <Routes>
+        <Route
+          exact
+          path=""
+          element={
+            <div className="centered">
+              <Link className="btn--flat"
+                to={`/Examples/RouterApp/QuoteDetail/${params.quoteId}/comments`}>
+                {" "}
+                Load Comments route
+              </Link>
+            </div>
+          }
+        ></Route>
+        <Route
+          path="/comments"
+          element={<Comments></Comments>}
+        ></Route>
+      </Routes>
+
       <Outlet></Outlet>
-    
+
     </>
   );
 };

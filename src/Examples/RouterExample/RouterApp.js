@@ -26,25 +26,9 @@ function RouterApp() {
         ></Route>
         <Route exact path="/NewQuote" element={<NewQuote></NewQuote>}></Route>
         <Route
-          path="/QuoteDetail/:quoteId"
+          path="/QuoteDetail/:quoteId/*"
           element={<QuoteDetail></QuoteDetail>}
         >
-          <Route
-            exact
-            path="/QuoteDetail/:quoteId"
-            element={
-              <div className="centered">
-              <Link className="btn--flat" to='/Examples/RouterApp/QuoteDetail/:quoteId/comments'>
-                {" "}
-                Load Comments route
-              </Link>
-              </div>
-            }
-          ></Route>
-          <Route
-            path={"/QuoteDetail/:quoteId/comments"}
-            element={<Comments></Comments>}
-          ></Route>
         </Route>
         <Route
           exact
