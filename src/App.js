@@ -13,12 +13,15 @@ function App() {
    }
  */
   const env = process.env.NODE_ENV
-   
+  const environment = process.env.REACT_APP_ENVIRONMENT
+  const commonParam = process.env.REACT_APP_NAME
+  console.log(" environment:",  environment , "commonParam:" ,commonParam)
+  console.log("process.env",process.env)
   return (
     <>
-      <AppHeader environment= {env}></AppHeader>
+      <AppHeader environment={environment }></AppHeader>
       <section style={{ marginTop: "6rem" }}>
-       <AppRoutes></AppRoutes>
+        <AppRoutes></AppRoutes>
       </section>
       <Footer>
         <div>
