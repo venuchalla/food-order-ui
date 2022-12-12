@@ -12,10 +12,11 @@ function App() {
      renderElement.push(localElement)
    }
  */
-
+  const env = process.env.NODE_ENV
+   
   return (
     <>
-      <AppHeader></AppHeader>
+      <AppHeader environment= {env}></AppHeader>
       <section style={{ marginTop: "6rem" }}>
        <AppRoutes></AppRoutes>
       </section>

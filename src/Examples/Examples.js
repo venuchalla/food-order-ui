@@ -10,37 +10,40 @@ const Examples = (props) => {
       <h1>React Examples</h1>
       <ul>
         <li>
-          <NavLink to="/Examples/UserFinder">ClassComponentExample</NavLink>
+          <NavLink to="UserFinder">ClassComponentExample</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/CustomHooksExample"> CustomHooks Example</NavLink>
+          <NavLink to="CustomHooksExample"> CustomHooks Example</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/CustomHooksHttpExampleMain"> CustomHooks Http Example</NavLink>
+          <NavLink to="CustomHooksHttpExampleMain"> CustomHooks Http Example</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/ExpenseTracker"> Expense Tracker</NavLink>
+          <NavLink to="ExpenseTracker"> Expense Tracker</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/FormExample"> Form Example</NavLink>
+          <NavLink to="FormExample"> Form Example</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/ReduxAdvancedExample"> Redux Advanced Example</NavLink>
+          <NavLink to="ReduxAdvancedExample"> Redux Advanced Example</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/ReduxExample"> Redux Example</NavLink>
+          <NavLink to="ReduxExample"> Redux Example</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/HttpRequestExample">Http Request Example</NavLink>
+          <NavLink to="HttpRequestExample">Http Request Example</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/RouterApp">Router Example</NavLink>
+          <NavLink to="RouterApp">Router Example</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/StyleExample">Styles Example</NavLink>
+          <NavLink to="StyleExample">Styles Example</NavLink>
         </li>
         <li>
-          <NavLink to="/Examples/UserMain"> User App</NavLink>
+          <NavLink to="UserMain"> User App</NavLink>
+        </li>
+        <li>
+          <NavLink to="Authentication"> Authentication App</NavLink>
         </li>
       </ul>
     </Card>

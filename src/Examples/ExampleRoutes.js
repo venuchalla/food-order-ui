@@ -10,6 +10,7 @@ import RouterApp from "./RouterExample/RouterApp";
 import HttpRequestExample from "./HttpRequestsExample/HttpRequestExample";
 import StyleExample from "./StylesExample/StyleExample";
 import UserMain from "./UserApp/UserMain/UserMain";
+import AuthenticationApp from "./Authentication/AuthenticationApp";
 const ExampleRoutes = () => {
   return (
     <Routes>
@@ -65,6 +66,10 @@ const ExampleRoutes = () => {
       <Route
         path="/RouterApp/*"
         element={<RouterApp></RouterApp>}
+      ></Route>
+      <Route
+        path="/Authentication/*"
+        element={<AuthenticationApp></AuthenticationApp>}
       ></Route>
     </Routes>
   );
