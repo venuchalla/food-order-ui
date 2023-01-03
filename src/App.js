@@ -3,6 +3,8 @@ import Footer from "./Components/Layout/Footer-Component/Footer";
 import "./App.css";
 import AppHeader from "./Components/Layout/App-Header/AppHeader";
 import AppRoutes from "./AppRoutes";
+import MainLayout from "./Components/Layout/MainLayout/MainLayout";
+import { Route, Routes } from "react-router";
 
 
 function App() {
@@ -12,13 +14,20 @@ function App() {
      renderElement.push(localElement)
    }
  */
-  const env = process.env.NODE_ENV
-  const environment = process.env.REACT_APP_ENVIRONMENT
-  const commonParam = process.env.REACT_APP_NAME 
-  console.log(" environment:",  environment , "commonParam:" ,commonParam,"env",env)
-  console.log("process.env",process.env)
-  return (
-    <>
+  const env = process.env.NODE_ENV;
+  const environment = process.env.REACT_APP_ENVIRONMENT;
+  const commonParam = process.env.REACT_APP_NAME;
+  console.log(
+    " environment:",
+    environment,
+    "commonParam:",
+    commonParam,
+    "env",
+    env
+  );
+  console.log("process.env", process.env);
+  /**
+   * <>
       <AppHeader environment={environment }></AppHeader>
       <section style={{ marginTop: "6rem" }}>
         <AppRoutes></AppRoutes>
@@ -29,6 +38,11 @@ function App() {
         </div>
       </Footer>
     </>
+   */
+  return (
+    <MainLayout>
+       <AppRoutes></AppRoutes>
+    </MainLayout>
   );
 }
 

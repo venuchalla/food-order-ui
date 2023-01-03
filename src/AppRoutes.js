@@ -16,14 +16,20 @@ import NewQuote from "./Examples/RouterExample/Pages/NewQuote";
 import AllQuotes from "./Examples/RouterExample/Pages/AllQuotes";
 import QuoteDetail from "./Examples/RouterExample/Pages/QuoteDetail";
 import RouterApp from "./Examples/RouterExample/RouterApp";
+import HomePage from "./pages/HomePage";
+import AuthPage from "./pages/AuthPage";
+import UserProfile from "./Examples/ReduxExample/components/UserProfile";
 const AppRoutes = (props) => {
+  // <Route path="/home" element={<Home></Home>}></Route>
   return (
     <Routes>
       <Route
         path="/"
-        element={<Navigate to={"/home"} replace={true}></Navigate>}
+        element={<Navigate to={"/auth"} replace={true}></Navigate>}
       ></Route>
-      <Route path="/home" element={<Home></Home>}></Route>
+      <Route path="/home" element={<HomePage></HomePage>}></Route>
+      <Route path="/auth" element={<AuthPage></AuthPage>}></Route>
+      <Route path="/profile" element={<UserProfile></UserProfile>}></Route>
       <Route path="/Examples/*" element={<Examples></Examples>}></Route>
       <Route
         path="/CourseApp"
