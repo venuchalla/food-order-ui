@@ -8,6 +8,8 @@ const Header = () => {
   const logOutHandler =()=>{
     dispatch(authActions.logout());
   }
+  // <a href="sales">My Sales</a>
+  //<a href="products">My Products</a>
   return (
     <header className={classes.header}>
       <h1>Redux Auth</h1>
@@ -15,10 +17,10 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <a href="/">My Products</a>
+            My Sales
             </li>
             <li>
-              <a href="/">My Sales</a>
+            My Products
             </li>
             <li>
               <button onClick={logOutHandler}>Logout</button>

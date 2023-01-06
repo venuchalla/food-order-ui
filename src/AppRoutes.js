@@ -29,7 +29,15 @@ const AppRoutes = (props) => {
         path="/"
         element={<Navigate to={"/auth"} replace={true}></Navigate>}
       ></Route>
-      <Route path="/auth" element={<AuthPage></AuthPage>}></Route>
+      {!authContext.isLoggedIn && (
+        <Route path="/auth" element={<AuthPage></AuthPage>}></Route>
+      )}
+      {authContext.isLoggedIn && (
+        <Route
+          path="/auth"
+          element={<Navigate to={"/home"} replace={true}></Navigate>}
+        ></Route>
+      )}
       {authContext.isLoggedIn && (
         <Route path="/home" element={<HomePage></HomePage>}></Route>
       )}
