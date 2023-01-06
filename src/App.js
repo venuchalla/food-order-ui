@@ -18,14 +18,11 @@ function App() {
   const environment = process.env.REACT_APP_ENVIRONMENT;
   const commonParam = process.env.REACT_APP_NAME;
   console.log(
-    " environment:",
+    " React environment :",
     environment,
     "commonParam:",
     commonParam,
-    "env",
-    env
   );
-  console.log("process.env", process.env);
   /**
    * <>
       <AppHeader environment={environment }></AppHeader>
