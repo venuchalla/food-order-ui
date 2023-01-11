@@ -17,14 +17,14 @@ const CartReducer = (state, action) => {
             const existingItem = state.items[existingItemIndex]
             //console.log("existing item :", existingItem)
             let updatedAmount = existingItem.amount + action.item.amount
-            console.log("count:",updatedAmount)
+            //console.log("count:",updatedAmount)
             let updatedItem = { ...existingItem, amount: updatedAmount }
             updatedItems = state.items
             updatedItems[existingItemIndex] = updatedItem
         } else {
             updatedItems = state.items.concat(action.item)
         }
-        console.log("updated items: ",updatedItems)
+       // console.log("updated items: ",updatedItems)
         return {
             items: updatedItems,
             totalAmount: updatedTotalAmount
@@ -45,6 +45,9 @@ const CartReducer = (state, action) => {
         return { items: updatedItems, totalAmount: updatedTotalAmount }
 
     }
+    if(action.type === 'CLEAR'){
+        return defaultCartState;
+    }
     return defaultCartState;
 }
 
@@ -56,11 +59,15 @@ const CartProvider = (props) => {
     const removeItemHandler = (id) => {
         dispatchCartAction({ type: "REMOVE", id: id })
     }
+    const clearItems = () =>{
+        dispatchCartAction({type:'CLEAR'})
+    }
     const cartContext = {
         items: cartState.items,
         totalAmount: cartState.totalAmount,
         addItem: addItemHandler,
-        removeItem: removeItemHandler
+        removeItem: removeItemHandler,
+        clearItems:clearItems
     }
     return (<CartContext.Provider value={cartContext}> {props.children}</CartContext.Provider>)
 }

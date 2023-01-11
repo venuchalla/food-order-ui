@@ -2,7 +2,8 @@ import React from "react";
 const defaultValue = {
     items :[],
     addItem : ()=>{},
-    removeItem : ()=>{}
+    removeItem : ()=>{},
+    clearItems :()=>{}
 }
 const CartContext= React.createContext(defaultValue);
 
