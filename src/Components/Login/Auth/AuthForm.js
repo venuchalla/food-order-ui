@@ -3,6 +3,17 @@ import { useNavigate } from "react-router";
 import AuthContext from "../../Store/auth-context";
 
 import classes from "./AuthForm.module.css";
+import PropTests from "../../../Examples/PropsTest/PropTest";
+
+import s from "../../../Examples/PropsTest/Test"
+
+
+const s2 = new s("venu", 1993)
+const s3 = {
+  name : "tttttt",
+  x :"123455"
+}
+const arrays =["test","weeee"]
 
 const AuthForm = () => {
   const navigate = useNavigate();
@@ -114,7 +125,9 @@ const AuthForm = () => {
             onClick={switchAuthModeHandler}
           >
             {isLogin ? "Create new account" : "Login with existing account"}
+
           </button>
+          <PropTests a = {s3} b= {arrays}> </PropTests>
         </div>
       </form>
     </section>
